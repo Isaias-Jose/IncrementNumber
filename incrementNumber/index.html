@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <span class="minus">-</span>
+        <span class="num">01</span>
+        <span class="plus">+</span>
+    </div>
+
+    <script>
+        const plus = document.querySelector(".plus");
+        const num = document.querySelector(".num");
+        const minus = document.querySelector(".minus");
+
+        let add = 1;
+
+        plus.addEventListener("click", ()=>{
+            add++;
+            add = (add < 10) ? "0" + add: add;
+
+            num.innerText = add;
+        })
+
+        minus.addEventListener("click", ()=>{
+            if(add > 1) {
+                add--;
+                add = (add < 10) ? "0" + add: add;
+                num.innerText = add;
+            }
+        })
+
+    </script>
+</body>
+</html>
